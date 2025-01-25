@@ -14,7 +14,7 @@ def service (request):
 
 def shop (request):
 
-    return render(request, "blog.html")
+    return render(request, "shop.html")
 
 
 def blog (request):
