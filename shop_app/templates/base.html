@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            {% block title %}
+
+            {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        <h1 style = "background-color: darkolivegreen;
+        color: white;
+        text-align: center;">
+            This is the title.
+        </h1>
+        {%include "header/nav_bar.html" %}
+        <h3 style = "color: red">
+            Subtitle.
+        </h3>
+
+        {% block content %}
+
+        {% endblock %}
+
+        <p style = "background-color: darkolivegreen;
+        color: white;
+        text-align: right;">
+            Common things.
+        </p>
+
+        {%include "footer/foot.html" %}
+        <h3 style = "color: red">
+            FOOTER.
+        </h3>
+    </body>
+
+</html>
