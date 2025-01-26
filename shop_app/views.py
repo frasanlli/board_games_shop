@@ -4,24 +4,24 @@ from django.shortcuts import render
 
 def home (request):
 
-    return render(request, "home.html")
+    return render(request, "shop_app/home.html")
 
 
 def service (request):
 
-    return render(request, "service.html")
+    return render(request, "shop_app/service.html")
 
 
 def shop (request):
 
-    return render(request, "shop.html")
+    return render(request, "shop_app/shop.html")
 
 
 def blog (request):
 
-    return render(request, "blog.html")
+    return render(request, "shop_app/blog.html")
 
 
 def contact (request):
 
-    return render(request, "contact.html")
+    return render(request, "shop_app/contact.html")
