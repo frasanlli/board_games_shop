@@ -9,20 +9,14 @@
 {% endblock %}
 
 {% block message %}
-    <section class="page-section cta">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <div class="cta-inner text-center rounded">
-            <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Compromiso total</span>
-              <span class="section-heading-lower">Garantizado</span>
-            </h2>
-            <p class="mb-0">SERVICE TESTS</p>
-          </div>
-        </div>
-      </div>
+  {% for service in services %}
+    <div>
+      <p>
+        <h2 style= "color: red;">{{service.title}}</h2>
+        <p style= "color: red;">{{service.content}}></p>
+        <p><img src="{{service.image.url}}"></p>
+      </p>
     </div>
-  </section>
+  {% endfor %}
 
 {% endblock %}
