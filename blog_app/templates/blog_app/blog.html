@@ -1,0 +1,31 @@
+{% extends "shop_app/base.html" %}
+{% block title %}
+    BLOG
+{% endblock %}
+
+{% block message %}
+  {% for post in posts %}
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        {% if post.image %}
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+          src="{{post.image.url}}"
+          alt=""
+          style="width: 50%;">
+        {% endif %}
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">
+              {{post.title}}
+            </span>
+          </h2>
+          <span class="section-heading-upper">
+            {{post.content}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+{% endblock %}
