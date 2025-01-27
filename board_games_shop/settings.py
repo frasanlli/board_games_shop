@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop_app'
+    'shop_app',
+    'service_app',
 ]
 
 MIDDLEWARE = [
@@ -75,25 +76,12 @@ WSGI_APPLICATION = 'board_games_shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# In this class, we change the database connecting to a PosgreSQL.
-# 2- Install library psycopg. Because psycopg2 is likely to be deprecated and removed at some point in the future.
-# 3- Modify ENGINE and NAME
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': PConstants.NAME,
-        'USER': PConstants.USER,
-        'PASSWORD': PConstants.PASSWORD,
-        'HOST': PConstants.HOST,
-        'DATABASE_PORT': PConstants.DATABASE_PORT,
-    }
-}
-"""{
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}"""
+}
 
 
 # Password validation
