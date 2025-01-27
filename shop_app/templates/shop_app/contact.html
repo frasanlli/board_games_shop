@@ -1,11 +1,39 @@
 {% extends "shop_app/base.html" %}
-
-{% block title %}
-    CONTACT
+{% block heading %}
+<section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">CONTACT FORM</span>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
-{% block content %}
-    <h1>Contact us</h1>
-
+{% block message %}
+    <section class="page-section cta">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    {% if form.errors %}
+                        <p style="color: red;"> Please check the data of each field</p>
+                    {% endif %}
+                    <form action="" method="POST">{% csrf_token %}
+                        <table>
+                            {{form.as_table}}
+                        </table>
+                        <input type="submit" value="send">
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block title %}
 
 {% endblock %}
