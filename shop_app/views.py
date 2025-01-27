@@ -2,20 +2,12 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
 from shop_app.forms import Contact_form
-from service_app.models import Service
 
 # Create your views here.
 
 def home (request):
 
     return render(request, "shop_app/home.html")
-
-
-def service (request):
-
-    services = Service.objects.all()
-    return render(request, "shop_app/service.html", {"services": services})
-
 
 def shop (request):
 

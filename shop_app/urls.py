@@ -10,9 +10,8 @@ urlpatterns = [
     path('shop', views.shop, name='shop'),
     path('blog', views.blog, name='blog'),
     path('contact', views.contact, name='contact'),
-    path('service', views.service, name='service'),
-
 ]
 
-urlpatterns+=static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns+=static(settings.MEDIA_URL,
+                    document_root = settings.MEDIA_ROOT)
 
