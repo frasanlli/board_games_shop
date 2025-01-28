@@ -1,0 +1,47 @@
+{% extends "shop_app/base.html" %}
+{% block heading %}
+<section class="page-section clearfix">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h1>
+            <span class="section-heading-upper">CONTACT FORM</span>
+          </h1>
+        </div>
+  </section>
+{% endblock %}
+
+{% block message %}
+<section class="page-section clearfix">
+      {% if post.image %}
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+        src="{{post.image.url}}"
+        alt=""
+        style="width: 50%;">
+      {% endif %}
+
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+
+        {% if "valid" in request.GET %}
+          <p>Thanks. We will check your message!</p>
+        {% endif %}
+
+        {% if "error" in request.GET %}
+          <p>ERROR: Form could not be sent. Check your connection or try latter</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <p style="color: red;"> Please check the data of each field</p>
+        {% endif %}
+
+        <form action="" method="POST">{% csrf_token %}
+        <table style="margin: auto;">
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="send">
+      </div>
+
+
+
+{% endblock %}
+{% block title %}
+
+{% endblock %}

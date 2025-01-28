@@ -29,3 +29,4 @@ media/
 
 #Protected variables
 p_constants.py
+credentials.json

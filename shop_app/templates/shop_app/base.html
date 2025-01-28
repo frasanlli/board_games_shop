@@ -50,7 +50,7 @@
                     </li>
 
                     <li class="nav-item
-                        {% if request.path == '/service' %}
+                        {% if request.path == '/service/' %}
                             active
                         {% endif %}
                         px-lg-4">
@@ -66,7 +66,7 @@
                     </li>
 
                     <li class="nav-item
-                        {% if request.path == '/contact' %}
+                        {% if request.path == '/contact/' %}
                             active
                         {% endif %}
                         px-lg-4">
@@ -74,7 +74,7 @@
                     </li>
 
                     <li class="nav-item
-                        {% if request.path == '/blog' %}
+                        {% if '/blog/' in request.path %}
                             active
                         {% endif %}
                         px-lg-4">
