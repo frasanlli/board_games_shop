@@ -1,0 +1,48 @@
+{% extends "shop_app/base.html" %}
+{% block title %}
+    SHOP
+{% endblock %}
+
+{% block message %}
+  {% for item in items %}
+  <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        {% if item.image %}
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+          src="{{item.image.url}}"
+          alt=""
+          style="width: 50%;">
+        {% endif %}
+
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">
+              {{item.name}}
+            </span>
+            <span class="section-heading-upper">
+              {{item.price}}
+            </span>
+          </h2>
+          <div style="text-align: left; font-size: 0.8em;">
+            {{item.availability}}
+          </div>
+          <div style="text-align: right; font-size: 0.8em;">
+            {{item.categories}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+  <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="width: 30%; margin: auto; font-size: 0.8em;">
+    <p>Categories:</p>
+      {% for category in categories %}
+        <a href="{% url 'item_category' category.id %}">
+          {{category.name}}&nbsp;
+        </a>
+      {% endfor %}
+  </div>
+
+{% endblock %}

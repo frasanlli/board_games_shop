@@ -8,7 +8,8 @@ from shop_app import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('shop', views.shop, name='shop'),
-
+    path('shop/category/<int:category_id>/',
+         views.category_filter, name='item_category'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL,
