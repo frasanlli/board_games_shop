@@ -4,37 +4,30 @@
 {% endblock %}
 
 {% block message %}
+<div class ="row">
   {% for item in items %}
-  <section class="page-section clearfix">
-    <div class="container">
-      <div class="intro">
-        {% if item.image %}
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
-          src="{{item.image.url}}"
-          alt=""
-          style="width: 50%;">
-        {% endif %}
+  <div class ="col-md-3">
+    <div class="card" style="margin-top: 10px;">
 
-        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-          <h2 class="section-heading mb-4" >
-            <span class="section-heading-lower">
+      {% if item.image %}
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded"
+      src="{{item.image.url}}"
+      class="card-img-top">
+      {% endif %}
+
+      <div class="card-body">
+          <h7 class="card-title" >
               {{item.name}}
-            </span>
-            <span class="section-heading-upper">
-              {{item.price}}
-            </span>
-          </h2>
-          <div style="text-align: left; font-size: 0.8em;">
-            {{item.availability}}
-          </div>
-          <div style="text-align: right; font-size: 0.8em;">
-            {{item.categories}}
-          </div>
-        </div>
+          </h7>
+          <p class="card-text">
+              {{item.price}}&nbsp;€
+          </p>
+          {{item.categories}}
       </div>
     </div>
-  </section>
+  </div>
   {% endfor %}
+</div>
 
   <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="width: 30%; margin: auto; font-size: 0.8em;">
     <p>Categories:</p>
