@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib.messages import constants
 from board_games_shop.p_constants import PConstants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -144,3 +145,13 @@ DEFAULT_FROM_EMAIL = PConstants.DEFAULT_FROM_EMAIL
 EMAIL_HOST_USER = PConstants.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = PConstants.EMAIL_HOST_PASSWORD
 NOTIFY_EMAIL = PConstants.NOTIFY_EMAIL
+
+#Configuration errors
+
+MESSAGE_TAGS={
+
+    constants.DEBUG: 'debug',
+    constants.INFO: 'info',
+    constants.ERROR: 'error',
+    constants.SUCCESS: 'success',
+    constants.WARNING: 'warning'}

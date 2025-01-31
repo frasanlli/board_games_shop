@@ -5,6 +5,7 @@ from .cart import Cart
 # Create your views here.
 
 def home (request):
+    cart = Cart(request)
 
     return render(request, "shop_app/home.html")
 

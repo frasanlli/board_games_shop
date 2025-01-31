@@ -1,12 +1,12 @@
 class Cart:
     def __init__(self, request):
         self.request = request
-        """self.session = request.session
+        self.session = request.session
         #cart is a dictionary {item.id1: {<item_properties>}, item.id2: {<item_properties>},}
         cart: dict = self.session.get("cart")
 
         if not cart:
-            cart = self.session["cart"] = {}"""
+            cart = self.session["cart"] = {}
 
         self.cart = cart
 
