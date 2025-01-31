@@ -30,6 +30,7 @@ class Cart:
         for key, value in self.cart.items():
             if key == str(item.id):
                 value["quantity"]=value["quantity"]+1
+                value["price"] = value["quantity"]*item.price
                 break
 
 
@@ -43,6 +44,7 @@ class Cart:
             for key, value in self.cart.items():
                 if key == str(item.id):
                     value["quantity"] = value["quantity"]-1
+                    value["price"] = value["quantity"]*item.price
                     if value["quantity"] == 0:
                         self.delete(item, True)
                     break
