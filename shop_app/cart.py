@@ -40,21 +40,23 @@ class Cart:
 
 
     def substract(self, item):
-        if (str(item.id) in self.cart.keys()):
-            for key, value in self.cart.items():
-                if key == str(item.id):
-                    value["quantity"] = value["quantity"]-1
-                    value["price"] = value["quantity"]*item.price
-                    if value["quantity"] == 0:
-                        self.delete(item, True)
-                    break
+        #if (str(item.id) in self.cart.keys()):
+        for key, value in self.cart.items():
+            if key == str(item.id):
+                value["quantity"] = value["quantity"]-1
+                value["price"] = value["quantity"]*item.price
+                if value["quantity"] < 1:
+                    self.delete(item, True)
+                break
         self.save_cart()
 
 
     def delete(self, item, substract=False):
-        del self.cart[item.id]
-        if not substract:
-            self.save_cart()
+        item.id = str(item.id)
+        if (item.id in self.cart):
+            del self.cart[item.id]
+            if not substract:
+                self.save_cart()
 
     def clean_cart(self):
         self.session["cart"] = {}
