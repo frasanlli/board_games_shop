@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block message %}
+    CART
+  </button>
   <div class ="row">
     {% for item in items %}
     <div class ="col-md-3">
@@ -23,8 +25,14 @@
             <p class="card-text">
                 {{item.price}}&nbsp;€
             </p>
-            {{item.categories}}
         </div>
+
+        <div class="card-footer text-center">
+          <a href="{% url 'add_item' item.id %}" class="btn btn-success" value="{{item.id}}">
+            Add to cart
+          </a>
+        </div>
+
       </div>
     </div>
     {% endfor %}
@@ -37,6 +45,9 @@
           {{category.name}}&nbsp;
         </a>
       {% endfor %}
+  </div>
+  <div class="fixed-bottom" style="width:fit-content; height: fit-content; margin-left: auto; margin-right: 20px; background-color: green">
+    {% include "cart/widget.html" %}
   </div>
 
 {% endblock %}

@@ -10,6 +10,14 @@ urlpatterns = [
     path('shop', views.shop, name='shop'),
     path('shop/category/<int:category_id>/',
          views.category_filter, name='item_category'),
+    path('shop/add/<int:item_id>/',
+         views.add_item, name='add_item'),
+    path('shop/substract/<int:item_id>/',
+         views.substract_item, name='substract_item'),
+    path('shop/delete/<int:item_id>/',
+         views.delete_item, name='delete_item'),
+    path('shop/clean_cart/<int:item_id>/',
+         views.clean_cart, name='clean_cart'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL,
