@@ -5,6 +5,19 @@
 {% endblock %}
 
 {% block message %}
+{% if messages %}
+<div class="intro-text left-0 text-center bg-faded p-5 rounded">
+      {% for message in messages %}
+        {% if message.tags %}
+        <h1>
+          {{ message }}
+        </h1>
+        {% endif %}
+      {% endfor %}
+</div>
+{% endif %}
+
+
   </button>
   <div class ="row">
     {% for item in items %}

@@ -35,9 +35,20 @@
         {% endif %}
     </tbody>
     <tfoot>
-        <th colspan="3">
-            Total amount: {{total_amount}}€
-        </th>
+        <tr>
+            <td colspan="3">
+                Total amount: {{total_amount}}€
+            </td>
+        </tr>
+        {%if request.session.cart.items %}
+        <tr>
+            <td colspan="3" style="text-align: center;">
+                <a href="orders/" class ="btn btn-success" >
+                    Order products
+                </a>
+            </td>
+        </tr>
+        {% endif %}
     </tfoot>
 </table>
 
